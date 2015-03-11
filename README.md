@@ -1,4 +1,4 @@
-# Flashcat
+# [Flashcat](http://www.jaken.me/Flashcat)
 Multi Application Installer and Updater
 
 [![Build Status](https://travis-ci.org/JakenHerman/Flashcat.svg?branch=master)](https://travis-ci.org/JakenHerman/Flashcat)
