@@ -1,18 +1,19 @@
 import javax.swing.*;
+import java.awt.*;
 
-public class FlashCatDriver{
-    
+class FlashCatDriver{
+
     /*
-     
+
      Get the user's operating system to ensure you're installing the proper
      files. (exe, dmg, etc)
-     
+
      */
-    
+
     public static String getOS()
     {
         String os = JOptionPane.showInputDialog("Are you running Mac or Windows?");
-        
+
         StringBuilder sb = new StringBuilder(os);
         for (int index = 0; index < sb.length(); index++) {
             char c = sb.charAt(index);
@@ -20,29 +21,53 @@ public class FlashCatDriver{
                 sb.setCharAt(index, Character.toUpperCase(c));
             } //end if
         }//end for loop
-        
+
         os = sb.toString();
         return os;
     } //end getOS method
 
-    
-    public static useWindows(){
-        System.out.println("Hello Windows");
+/*
+
+==============================
+	Windows Method
+==============================
+
+*/
+    public void useWindows(){
+        FlashcatWindows fw = new FlashcatWindows();
+        fw.FlashcatWindows();
+
     }
-    
-    public static useMac(){
+
+
+/*
+
+==============================
+    Macintosh Method
+==============================
+
+*/
+    public static void useMac(){
         System.out.println("Hi Mac");
     }
-    
+
     /*
-     
+
      Begin main method
-     
+
     */
-    
+
     public static void main(String[] args){
-        
-    
+
+
+        FlashCatDriver driver = new FlashCatDriver();
+        driver.start();
+
+
+
+    } // end main method
+
+    public void start(){
         String system = getOS();
 
         /*
@@ -50,7 +75,7 @@ public class FlashCatDriver{
          NEITHER CASE
          =============================
          */
-        
+
         while(!system.equals("MAC") && !system.equals("WINDOWS"))
         {
             JOptionPane.showMessageDialog(null, "Invalid input, please specify your OS");
@@ -61,25 +86,22 @@ public class FlashCatDriver{
                 WINDOWS CASE
          =============================
          */
-        
+
         if(system.equals("WINDOWS"))
         {
-            useWindows(); // fail
+            useWindows();
         }
-        
+
         /*
          =============================
                   MAC CASE
          =============================
          */
-        
+
         if(system.equals("MAC"))
         {
-            useMac(); // fail
+            FlashCatDriver.useMac();
         }
-        
-        
-        
-    } // end main method
+    }// end start
 
 } //end class
