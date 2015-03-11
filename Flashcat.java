@@ -1,7 +1,9 @@
+package flashcat;
+
 import javax.swing.*;
 import java.awt.*;
 
-class FlashCatDriver{
+class Flashcat{
 
     /*
 
@@ -35,7 +37,8 @@ class FlashCatDriver{
 */
     public void useWindows(){
         FlashcatWindows fw = new FlashcatWindows();
-        fw.FlashcatWindows();
+        fw.fwCaller();
+ 
 
     }
 
@@ -60,7 +63,7 @@ class FlashCatDriver{
     public static void main(String[] args){
 
 
-        FlashCatDriver driver = new FlashCatDriver();
+        Flashcat driver = new Flashcat();
         driver.start();
 
 
@@ -100,7 +103,7 @@ class FlashCatDriver{
 
         if(system.equals("MAC"))
         {
-            FlashCatDriver.useMac();
+            useMac();
         }
     }// end start
 

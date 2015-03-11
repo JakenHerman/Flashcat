@@ -1,3 +1,4 @@
+package flashcat;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -66,4 +67,12 @@ public class FlashcatWindows extends JFrame {
         chromeButton.addActionListener(listener);
         pack();
     }
+
+    void fwCaller() {
+        try {
+            new FlashcatWindows().setVisible(true);
+        } catch (Exception e) {
+        }
+    }
+
 }
