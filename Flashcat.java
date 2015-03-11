@@ -38,8 +38,7 @@ class Flashcat{
     public void useWindows(){
         FlashcatWindows fw = new FlashcatWindows();
         fw.fwCaller();
- 
-
+        
     }
 
 
@@ -51,7 +50,8 @@ class Flashcat{
 
 */
     public static void useMac(){
-        System.out.println("Hi Mac");
+        FlashcatMac fm = new FlashcatMac();
+        fm.fmCaller();
     }
 
     /*
