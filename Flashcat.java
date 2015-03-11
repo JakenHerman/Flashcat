@@ -2,6 +2,15 @@ package flashcat;
 
 import javax.swing.*;
 import java.awt.*;
+/**
+ * 
+ * 
+ * 
+ * Flashcat Driver File
+ * 
+ * 
+ * @author Jaken Herman
+ */
 
 class Flashcat{
 

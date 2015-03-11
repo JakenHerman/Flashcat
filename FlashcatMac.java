@@ -11,6 +11,14 @@ import javax.swing.border.EmptyBorder;
 
 public class FlashcatMac extends JFrame {
 
+        // Variables declaration - do not modify                     
+    private javax.swing.JLabel browserLabel;
+    private javax.swing.JButton chromeButton;
+    private javax.swing.JButton firefoxButton;
+    private javax.swing.JLabel osLabel;
+    // End of variables declaration    
+    
+    
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -30,47 +38,61 @@ public class FlashcatMac extends JFrame {
 
     public FlashcatMac() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
-        JPanel contentPane = new JPanel(new GridLayout(2,1));
-        contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
-        add(contentPane);
+        osLabel = new javax.swing.JLabel();
+        firefoxButton = new javax.swing.JButton();
+        chromeButton = new javax.swing.JButton();
+        browserLabel = new javax.swing.JLabel();
 
-        JPanel radioPanel = new JPanel(new GridLayout(0,1));
-        JRadioButton firefoxButton = new JRadioButton("Firefox");
-        firefoxButton.setActionCommand(firefoxTag);
-        firefoxButton.setSelected(true);
-        JRadioButton chromeButton = new JRadioButton("Chrome");
-        chromeButton.setActionCommand(chromeTag);
-        ButtonGroup group = new ButtonGroup();
-        group.add(firefoxButton);
-        group.add(chromeButton);
-        radioPanel.add(firefoxButton);
-        radioPanel.add(chromeButton);
-        contentPane.add(radioPanel);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cardLayout = new CardLayout();
-        cards = new JPanel(cardLayout);
-        JPanel firefoxCard = new JPanel(new BorderLayout());
-        firefoxCard.add(new Label("Firefox card"), BorderLayout.CENTER);
-        JPanel chromeCard = new JPanel(new BorderLayout());
-        chromeCard.add(new Label("Chrome card"), BorderLayout.CENTER);
-        cards.add(firefoxCard, firefoxTag);
-        cards.add(chromeCard, chromeTag);
-        contentPane.add(cards);
-        ActionListener listener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cardLayout.show(cards, e.getActionCommand());
-            }
-        };
-        firefoxButton.addActionListener(listener);
-        chromeButton.addActionListener(listener);
+        osLabel.setText("Macintosh Downloader");
+
+        firefoxButton.setText("Firefox");
+
+        chromeButton.setText("Chrome");
+
+        browserLabel.setText("Web Browsers");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(293, Short.MAX_VALUE)
+                .addComponent(osLabel)
+                .addGap(352, 352, 352))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(chromeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(61, 61, 61)
+                            .addComponent(firefoxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(browserLabel)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(osLabel)
+                .addGap(51, 51, 51)
+                .addComponent(browserLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(firefoxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chromeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(241, Short.MAX_VALUE))
+        );
+
         pack();
     }
 
     void fmCaller() {
         try {
-            new FlashcatWindows().setVisible(true);
+            new FlashcatMac().setVisible(true);
         } catch (Exception e) {
         }
     }
