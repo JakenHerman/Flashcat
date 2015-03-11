@@ -9,4 +9,5 @@ This application is intended to be a jump-starter for newer computer users or ev
 
 
 **Simplest Usage**
-Just run the .jar file. If you'd like to physically re-build and run the code from an Integrated Development Environment, use the flashcat.java file, as it is the driver for other files.
+
+Just run the `.jar` file. If you'd like to physically re-build and run the code from an Integrated Development Environment, use the `flashcat.java` file, as it is the driver for other files.
