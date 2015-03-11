@@ -26,6 +26,14 @@ public class FlashCatDriver{
     } //end getOS method
 
     
+    public static useWindows(){
+        System.out.println("Hello Windows");
+    }
+    
+    public static useMac(){
+        System.out.println("Hi Mac");
+    }
+    
     /*
      
      Begin main method
@@ -56,7 +64,7 @@ public class FlashCatDriver{
         
         if(system.equals("WINDOWS"))
         {
-            //do something
+            useWindows(); // fail
         }
         
         /*
@@ -67,7 +75,7 @@ public class FlashCatDriver{
         
         if(system.equals("MAC"))
         {
-            //do something
+            useMac(); // fail
         }
         
         
