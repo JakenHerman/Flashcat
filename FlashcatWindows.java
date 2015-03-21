@@ -3,6 +3,7 @@ package flashcat;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,14 +12,14 @@ import javax.swing.border.EmptyBorder;
 
 public class FlashcatWindows extends JFrame {
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify
     private javax.swing.JLabel browserLabel;
     private javax.swing.JButton chromeButton;
     private javax.swing.JButton firefoxButton;
     private javax.swing.JLabel osLabel;
-    // End of variables declaration    
-    
-    
+    // End of variables declaration
+
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -48,8 +49,11 @@ public class FlashcatWindows extends JFrame {
         osLabel.setText("Windows Downloader");
 
         firefoxButton.setText("Firefox");
+        File firefox_file_windows = new File("~/Windows/Firefox Setup 36.0.1.exe");
+
 
         chromeButton.setText("Chrome");
+        File chrome_file_windows = new File("~/Windows/ChromeSetup.exe");
 
         browserLabel.setText("Web Browsers");
 

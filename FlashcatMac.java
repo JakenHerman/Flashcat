@@ -3,6 +3,8 @@ package flashcat;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+import java.io.File;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,14 +13,14 @@ import javax.swing.border.EmptyBorder;
 
 public class FlashcatMac extends JFrame {
 
-        // Variables declaration - do not modify                     
+        // Variables declaration - do not modify
     private javax.swing.JLabel browserLabel;
     private javax.swing.JButton chromeButton;
     private javax.swing.JButton firefoxButton;
     private javax.swing.JLabel osLabel;
-    // End of variables declaration    
-    
-    
+    // End of variables declaration
+
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -48,8 +50,10 @@ public class FlashcatMac extends JFrame {
         osLabel.setText("Macintosh Downloader");
 
         firefoxButton.setText("Firefox");
+        File firefox_file_mac = new File("~/Mac/Firefox 36.0.1.dmg");
 
         chromeButton.setText("Chrome");
+        File chrome_file_mac = new File("~/Mac/googlechrome.dmg");
 
         browserLabel.setText("Web Browsers");
 
