@@ -50,10 +50,26 @@ public class FlashcatMac extends JFrame {
         osLabel.setText("Macintosh Downloader");
 
         firefoxButton.setText("Firefox");
-        File firefox_file_mac = new File("~/Mac/Firefox 36.0.1.dmg");
+        firefoxButton.addActionListener(new java.awt.event.ActionListener(){
+          public void actionPerformed (java.awt.event.ActionEvent evt){
+            try{
+            firefoxButtonActionPerformed(evt);
+          } catch (IOException ex){
+            Logger.getLogger(FlashcatMac.class.getName()).log(Level.SEVERE, null, ex);
+          }
+          }
+        });
 
         chromeButton.setText("Chrome");
-        File chrome_file_mac = new File("~/Mac/googlechrome.dmg");
+        chromeButton.addActionListener(new java.awt.event.ActionListener(){
+          public void actionPerformed (java.awt.event.ActionEvent evt){
+            try{
+            chromeButtonActionPerformed(evt);
+          } catch (IOException ex){
+            Logger.getLogger(FlashcatMac.class.getName()).log(Level.SEVERE, null, ex);
+          }
+          }
+        });
 
         browserLabel.setText("Web Browsers");
 
@@ -92,6 +108,25 @@ public class FlashcatMac extends JFrame {
         );
 
         pack();
+    }
+
+    private void firefoxButtonActionPerformed(java.awt.event.ActionEvent evt){
+      String filepath = new File("/Mac/Firefox 36.0.1.dmg").getAbsolutePath();
+      File firefox_file = new File(filepath);
+      try{
+        Desktop.getDesktop().open(firefox_file);
+      } catch(IOException e){
+      }
+    }
+
+    private void chromeButtonActionPerformed(java.awt.event.ActionEvent evt){
+      String filepath = new File("/Mac/googlechrome.dmg").getAbsolutePath();
+      File chrome_file = new File(filepath);
+      try{
+        Desktop.getDesktop().open(chrome_file);
+      } catch(IOException e){
+
+      }
     }
 
     void fmCaller() {

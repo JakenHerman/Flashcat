@@ -49,11 +49,28 @@ public class FlashcatWindows extends JFrame {
         osLabel.setText("Windows Downloader");
 
         firefoxButton.setText("Firefox");
-        File firefox_file_windows = new File("~/Windows/Firefox Setup 36.0.1.exe");
+        firefoxButton.addActionListener(new java.awt.event.ActionListener(){
+          public void actionPerformed (java.awt.event.ActionEvent evt){
+            try{
+            firefoxButtonActionPerformed(evt);
+          } catch (IOException ex){
+            Logger.getLogger(FlashcatWindows.class.getName()).log(Level.SEVERE, null, ex);
+          }
+          }
+        });
 
 
         chromeButton.setText("Chrome");
-        File chrome_file_windows = new File("~/Windows/ChromeSetup.exe");
+        chromeButton.addActionListener(new java.awt.event ActionListener(){
+          public void actionPerformed (java.awt.event.ActionEvent evt){
+            try{
+            chromeButtonActionPerformed(evt);
+          } catch (IOException ex) {
+            Logger.getLogger(FlashcatWindows.class.getName()).log(Level.SEVERE, null, ex);
+          }
+          }
+        });
+
 
         browserLabel.setText("Web Browsers");
 
@@ -92,6 +109,25 @@ public class FlashcatWindows extends JFrame {
         );
 
         pack();
+    }
+
+    private void firefoxButtonActionPerformed(java.awt.event.ActionEvent evt){
+      String filepath = new File("/Windows/Firefox Setup 36.0.1.exe").getAbsolutePath();
+      File firefox_file = new File(filepath);
+      try{
+        Desktop.getDesktop().open(firefox_file);
+      } catch(IOException e){
+      }
+    }
+
+    private void chromeButtonActionPerformed(java.awt.event.ActionEvent evt){
+      String filepath = new File("/Windows/ChromeSetup.exe").getAbsolutePath();
+      File chrome_file = new File(filepath);
+      try{
+        Desktop.getDesktop().open(chrome_file);
+      } catch(IOException e){
+
+      }
     }
 
     void fwCaller() {
