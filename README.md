@@ -1,4 +1,6 @@
 # [Flashcat](http://www.jaken.me/Flashcat)
+
+[![Join the chat at https://gitter.im/JakenHerman/Flashcat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JakenHerman/Flashcat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Multi Application Installer and Updater
 
 [![Build Status](https://travis-ci.org/JakenHerman/Flashcat.svg?branch=master)](https://travis-ci.org/JakenHerman/Flashcat)
